@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package acme.weather.v1;
+
+service WeatherService {
+  rpc GetWeather (WeatherRequest) returns (WeatherResponse);
+}
+
+message WeatherRequest {
+  string location = 1;
+}
+
+message WeatherResponse {
+  string location = 1;
+  string description = 2;
+  float temperature = 3;
+  float humidity = 4;
+  float wind_speed = 5;
+}
